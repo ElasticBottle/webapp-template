@@ -63,6 +63,7 @@ export default async function Blog({
       <script
         type="application/ld+json"
         suppressHydrationWarning
+        // biome-ignore lint/security/noDangerouslySetInnerHtml: this is safe since it's controlled by us
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
@@ -126,6 +127,7 @@ export default async function Blog({
         </div>
         <article
           className="prose dark:prose-invert mx-auto max-w-full"
+          // biome-ignore lint/security/noDangerouslySetInnerHtml: this is safe since it's controlled by us
           dangerouslySetInnerHTML={{ __html: post.source }}
         />
       </div>
